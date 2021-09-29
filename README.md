@@ -47,8 +47,8 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 ---
 
 # PoolTogether v4 contest details
-- $95,000 USDC main award pot
-- $5,000 USDC gas optimization award pot
+- $99,750 USDC main award pot
+- $5,250 USDC gas optimization award pot
 - Join [C4 Discord](https://discord.gg/EY5dvm3evD) to register
 - Submit findings [using the C4 form](https://code423n4.com/2021-10-pooltogether-v4-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
