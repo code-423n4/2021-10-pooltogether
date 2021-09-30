@@ -1,54 +1,7 @@
-# ✨ So you want to sponsor a contest
+# PoolTogether V4 Contest Details
 
-This `README.md` contains a set of checklists for our contest collaboration.
-
-Your contest will use two repos: 
-- **a _contest_ repo** (this one), which is used for scoping your contest and for providing information to contestants (wardens)
-- **a _findings_ repo**, where issues are submitted. 
-
-Ultimately, when we launch the contest, this contest repo will be made public and will contain the smart contracts to be reviewed and all the information needed for contest participants. The findings repo will be made public after the contest is over and your team has mitigated the identified issues.
-
-Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the contest sponsor (⭐️)**.
-
----
-
-# Contest setup
-
-## ⭐️ Sponsor: Provide contest details
-
-Under "SPONSORS ADD INFO HERE" heading below, include the following:
-
-- [ ] Name of each contract and:
-  - [ ] lines of code in each
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
-- [ ] Describe any novel or unique curve logic or mathematical models implemented in the contracts
-- [ ] Does the token conform to the ERC-20 standard? In what specific ways does it differ?
-- [ ] Describe anything else that adds any special logic that makes your approach unique
-- [ ] Identify any areas of specific concern in reviewing the code
-- [ ] Add all of the code to this repo that you want reviewed
-- [ ] Create a PR to this repo with the above changes.
-
----
-
-# Contest prep
-
-## ⭐️ Sponsor: Contest prep
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
-- [ ] Modify the bottom of this `README.md` file to describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. ([Here's a well-constructed example.](https://github.com/code-423n4/2021-06-gro/blob/main/README.md))
-- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 8 hours prior to contest start time.**
-- [ ] Ensure that you have access to the _findings_ repo where issues will be submitted.
-- [ ] Promote the contest on Twitter (optional: tag in relevant protocols, etc.)
-- [ ] Share it with your own communities (blog, Discord, Telegram, email newsletters, etc.)
-- [ ] Optional: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
-- [ ] Designate someone (or a team of people) to monitor DMs & questions in the C4 Discord (**#questions** channel) daily (Note: please *don't* discuss issues submitted by wardens in an open channel, as this could give hints to other wardens.)
-- [ ] Delete this checklist and all text above the line below when you're ready.
-
----
-
-# PoolTogether v4 contest details
-- $99,750 USDC main award pot
-- $5,250 USDC gas optimization award pot
+- $100,000 USDC main award pot
+- $5,000 USDC gas optimization award pot
 - Join [C4 Discord](https://discord.gg/EY5dvm3evD) to register
 - Submit findings [using the C4 form](https://code423n4.com/2021-10-pooltogether-v4-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
@@ -57,6 +10,96 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 - Contest Starts October 7, 2021 00:00 UTC
 - Contest Ends October 13, 2021 23:59 UTC
 
-This repo will be made public before the start of the contest. (C4 delete this line when made public)
+# Contest Scope
 
-[ ⭐️ SPONSORS ADD INFO HERE ]
+This contest is open for two weeks to give wardens time to understand the protocol properly. Submissions can only be made in the second week of the contest. Representatives from PoolTogether will be available in the Code Arena Discord to answer any questions during the contest period. The focus for the contest is to try and find any logic errors or ways to drain funds from the protocol in a way that is advantageous for an attacker at the expense of users with funds invested in the protocol. Wardens should assume that governance variables are set sensibly (unless they can find a way to change the value of a governance variable, and not counting social engineering approaches for this).
+
+# Protocol Overview
+
+PoolTogether promotes financial security by making it fun to save.
+
+PoolTogether V4 is unique as it enables a Prize Pool Network.  A Prize Pool Network allows users across chains, with different assets, or different yield sources to combine their interest and share a single pool of prize liquidity.
+
+1. 🏦 Users deposit into the network
+2. 📈 Yield accrues on deposits
+3. 🏆 The yield is randomly awarded as prizes to the users.
+
+The protocol turns your interest into fun prizes! You never lose your principal, and have a chance to win big.
+
+For a deeper look at the protocol, refer to the [PoolTogether V4 Documentation](https://v4.docs.pooltogether.com/protocol/introduction)
+
+## Smart Contracts
+
+The contracts under audit are those listed below.  Any other contract can be ignored.
+
+There are two repos you should clone:
+
+**v4-core:**
+```
+git clone git@github.com:pooltogether/v4-core.git
+```
+
+**v4-timelocks:**
+```
+git clone git@github.com:pooltogether/v4-timelocks.git
+```
+
+Both repos should be easy to setup:
+
+```
+nvm use; yarn; yarn test
+```
+
+### v4-core
+
+The [v4-core contracts](https://github.com/pooltogether/v4-core/tree/master/contracts) repo includes the contracts required for the protocol to function.
+
+| Contract | sloc |
+| -------- | ------ |
+| [ControlledToken.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/ControlledToken.sol) | 50 |
+| [DrawBeacon.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/DrawBeacon.sol) | 200 |
+| [DrawCalculator.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/DrawCalculator.sol) | 190 |
+| [DrawHistory.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/DrawHistory.sol) | 80 |
+| [DrawPrize.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/DrawPrize.sol) | 70 |
+| [PrizeDistributionHistory.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/PrizeDistributionHistory.sol) | 150 |
+| [PrizeFlush.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/PrizeFlush.sol) | 80 |
+| [Reserve.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/Reserve.sol) | 100 |
+| [Ticket.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/Ticket.sol) | 300 |
+| [prize-pool/PrizePool.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/prize-pool/PrizePool.sol) | 250 |
+| [prize-pool/YieldSourcePrizePool.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/prize-pool/YieldSourcePrizePool.sol) | 30 |
+| [prize-strategy/PrizeSplit.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/prize-strategy/PrizeSplit.sol) | 100 |
+| [prize-strategy/PrizeSplitStrategy.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/prize-strategy/PrizeSplitStrategy.sol) | 40 |
+| [libraries/DrawRingBufferLib.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/libraries/DrawRingBufferLib.sol) |  30 |
+| [libraries/ObservationLib.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/libraries/ObservationLib.sol) | 50 |
+| [libraries/RingBuffer.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/libraries/RingBuffer.sol) | 24 |
+| [libraries/TwabLib.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/libraries/TwabLib.sol) | 250 |
+
+### v4-timelocks
+
+The [v4-timelocks contracts](https://github.com/pooltogether/v4-timelocks/tree/master/contracts) repo includes the contracts that manage oracle timelocks.
+
+| Contract | sloc |
+| -------- | ------ |
+| [L1TimelockTrigger.sol](https://github.com/pooltogether/v4-timelocks/tree/master/contracts/L1TimelockTrigger.sol) | 40 |
+| [L2TimelockTrigger.sol](https://github.com/pooltogether/v4-timelocks/tree/master/contracts/L2TimelockTrigger.sol) | 40 |
+| [DrawCalculatorTimelock.sol](https://github.com/pooltogether/v4-timelocks/tree/master/contracts/DrawCalculatorTimelock.sol) | 80 |
+
+# Unique Logic
+
+- The [Time-Weighted Average Balance](https://v4.docs.pooltogether.com/protocol/concepts/time-weight-average-balance) is a cornerstone of the V4 design.  The concept (and some code!) was borrowed from Uniswap, but still requires heavy scrutiny.
+- The Draw Calculator implements the [Tsunami prize algorithm](https://v4.docs.pooltogether.com/protocol/concepts/prize-distribution).
+- The codebase uses ring buffers heavily.  You should be familiar with them.
+
+# Areas of Concern
+
+- Does our approach to generating "Picks" (pseudo-random numbers) have any flaws?
+- Is our analysis correct for the estimated number of winners for a degree? `i.e. (2^bitRange)^degree - (2^bitRange)^(degree-1) - (2^bitRange)^(degree-2) ...`
+- Does the implementation match the theory behind the Tsunami algorithm?  Are there errors or assumptions in the theory?
+- This design relies heavily on timestamps.  We highlight a few ways we've mitigated possible front-running at the bottom [of this page](https://v4.docs.pooltogether.com/protocol/reference/launch-architecture).  Have we missed anything?
+
+# Helpful Resources
+
+- [v4-testnet](https://github.com/pooltogether/v4-testnet) repo deploys the contracts in a very similar way to how we will do it in production, if you wish to see.
+- [Prize Pool Network](https://v4.docs.pooltogether.com/protocol/concepts/prize-pools-network)
+- [Smart Contracts Overview](https://v4.docs.pooltogether.com/protocol/reference/smart-contracts)
+- [Launch Architecture](https://v4.docs.pooltogether.com/protocol/reference/launch-architecture)
