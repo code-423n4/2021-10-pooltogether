@@ -1,3 +1,7 @@
+<p align="left">
+  <img src="images/pooltogether-logo--purple-gradient.png" alt="PoolTogether Brand" style="max-width:200px;" width="100%">
+</p>
+
 # PoolTogether V4 Contest Details
 
 - $100,000 USDC main award pot
