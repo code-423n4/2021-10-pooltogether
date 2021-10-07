@@ -56,37 +56,44 @@ nvm use; yarn; yarn test
 
 ### v4-core
 
-The [v4-core contracts](https://github.com/pooltogether/v4-core/tree/master/contracts) repo includes the contracts required for the protocol to function.
+The [v4-core contracts](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts) repo includes the contracts required for the protocol to function.
 
 | Contract | sloc |
 | -------- | ------ |
-| [ControlledToken.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/ControlledToken.sol) | 50 |
-| [DrawBeacon.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/DrawBeacon.sol) | 200 |
-| [DrawCalculator.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/DrawCalculator.sol) | 190 |
-| [DrawHistory.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/DrawHistory.sol) | 80 |
-| [DrawPrize.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/DrawPrize.sol) | 70 |
-| [PrizeDistributionHistory.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/PrizeDistributionHistory.sol) | 150 |
-| [PrizeFlush.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/PrizeFlush.sol) | 80 |
-| [Reserve.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/Reserve.sol) | 100 |
-| [Ticket.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/Ticket.sol) | 300 |
-| [prize-pool/PrizePool.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/prize-pool/PrizePool.sol) | 250 |
-| [prize-pool/YieldSourcePrizePool.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/prize-pool/YieldSourcePrizePool.sol) | 30 |
-| [prize-strategy/PrizeSplit.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/prize-strategy/PrizeSplit.sol) | 100 |
-| [prize-strategy/PrizeSplitStrategy.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/prize-strategy/PrizeSplitStrategy.sol) | 40 |
-| [libraries/DrawRingBufferLib.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/libraries/DrawRingBufferLib.sol) |  30 |
-| [libraries/ObservationLib.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/libraries/ObservationLib.sol) | 50 |
-| [libraries/RingBuffer.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/libraries/RingBuffer.sol) | 24 |
-| [libraries/TwabLib.sol](https://github.com/pooltogether/v4-core/tree/master/contracts/libraries/TwabLib.sol) | 250 |
+| [ControlledToken.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/ControlledToken.sol) | 50 |
+| [DrawBeacon.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/DrawBeacon.sol) | 200 |
+| [DrawCalculator.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/DrawCalculator.sol) | 190 |
+| [DrawBuffer.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/DrawBuffer.sol) | 80 |
+| [PrizeDistributor.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/PrizeDistributor.sol) | 70 |
+| [PrizeDistributionBuffer.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/PrizeDistributionBuffer.sol) | 150 |
+| [Reserve.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/Reserve.sol) | 100 |
+| [Ticket.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/Ticket.sol) | 300 |
+| [prize-pool/PrizePool.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/prize-pool/PrizePool.sol) | 250 |
+| [prize-pool/YieldSourcePrizePool.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/prize-pool/YieldSourcePrizePool.sol) | 30 |
+| [prize-strategy/PrizeSplit.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/prize-strategy/PrizeSplit.sol) | 100 |
+| [prize-strategy/PrizeSplitStrategy.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/prize-strategy/PrizeSplitStrategy.sol) | 40 |
+| [libraries/DrawRingBufferLib.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/libraries/DrawRingBufferLib.sol) |  30 |
+| [libraries/ObservationLib.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/libraries/ObservationLib.sol) | 50 |
+| [libraries/RingBufferLib.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/libraries/RingBufferLib.sol) | 24 |
+| [libraries/TwabLib.sol](https://github.com/pooltogether/v4-core/tree/35b00f710db422a6193131b7dc2de5202dc4677c/contracts/libraries/TwabLib.sol) | 250 |
+
+### v4-periphery
+
+The [v4-periphery contracts](https://github.com/pooltogether/v4-periphery/tree/0543fc8718a3078553082dee1cc08f56d475d4de/contracts) repo includes contracts outside of the core business logic.
+
+| Contract | sloc |
+| -------- | ------ |
+| [PrizeFlush.sol](https://github.com/pooltogether/v4-periphery/tree/0543fc8718a3078553082dee1cc08f56d475d4de/contracts/PrizeFlush.sol) | 80 |
 
 ### v4-timelocks
 
-The [v4-timelocks contracts](https://github.com/pooltogether/v4-timelocks/tree/master/contracts) repo includes the contracts that manage oracle timelocks.
+The [v4-timelocks contracts](https://github.com/pooltogether/v4-timelocks/tree/76340e91387878c7d1a3c0cf418a185823922244/contracts) repo includes the contracts that manage oracle timelocks.
 
 | Contract | sloc |
 | -------- | ------ |
-| [L1TimelockTrigger.sol](https://github.com/pooltogether/v4-timelocks/tree/master/contracts/L1TimelockTrigger.sol) | 40 |
-| [L2TimelockTrigger.sol](https://github.com/pooltogether/v4-timelocks/tree/master/contracts/L2TimelockTrigger.sol) | 40 |
-| [DrawCalculatorTimelock.sol](https://github.com/pooltogether/v4-timelocks/tree/master/contracts/DrawCalculatorTimelock.sol) | 80 |
+| [L1TimelockTrigger.sol](https://github.com/pooltogether/v4-timelocks/tree/76340e91387878c7d1a3c0cf418a185823922244/contracts/L1TimelockTrigger.sol) | 40 |
+| [L2TimelockTrigger.sol](https://github.com/pooltogether/v4-timelocks/tree/76340e91387878c7d1a3c0cf418a185823922244/contracts/L2TimelockTrigger.sol) | 40 |
+| [DrawCalculatorTimelock.sol](https://github.com/pooltogether/v4-timelocks/tree/76340e91387878c7d1a3c0cf418a185823922244/contracts/DrawCalculatorTimelock.sol) | 80 |
 
 # Unique Logic
 
