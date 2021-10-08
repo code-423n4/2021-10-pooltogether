@@ -87,13 +87,13 @@ The [v4-periphery contracts](https://github.com/pooltogether/v4-periphery/tree/0
 
 ### v4-timelocks
 
-The [v4-timelocks contracts](https://github.com/pooltogether/v4-timelocks/tree/76340e91387878c7d1a3c0cf418a185823922244/contracts) repo includes the contracts that manage oracle timelocks.
+The [v4-timelocks contracts](https://github.com/pooltogether/v4-timelocks/tree/60e6fc6bfa1a03d711bf4f2f0746c1b7828cdc67/contracts) repo includes the contracts that manage oracle timelocks.
 
 | Contract | sloc |
 | -------- | ------ |
-| [L1TimelockTrigger.sol](https://github.com/pooltogether/v4-timelocks/tree/76340e91387878c7d1a3c0cf418a185823922244/contracts/L1TimelockTrigger.sol) | 40 |
-| [L2TimelockTrigger.sol](https://github.com/pooltogether/v4-timelocks/tree/76340e91387878c7d1a3c0cf418a185823922244/contracts/L2TimelockTrigger.sol) | 40 |
-| [DrawCalculatorTimelock.sol](https://github.com/pooltogether/v4-timelocks/tree/76340e91387878c7d1a3c0cf418a185823922244/contracts/DrawCalculatorTimelock.sol) | 80 |
+| [L1TimelockTrigger.sol](https://github.com/pooltogether/v4-timelocks/tree/60e6fc6bfa1a03d711bf4f2f0746c1b7828cdc67/contracts/L1TimelockTrigger.sol) | 40 |
+| [L2TimelockTrigger.sol](https://github.com/pooltogether/v4-timelocks/tree/60e6fc6bfa1a03d711bf4f2f0746c1b7828cdc67/contracts/L2TimelockTrigger.sol) | 40 |
+| [DrawCalculatorTimelock.sol](https://github.com/pooltogether/v4-timelocks/tree/60e6fc6bfa1a03d711bf4f2f0746c1b7828cdc67/contracts/DrawCalculatorTimelock.sol) | 80 |
 
 # Unique Logic
 
